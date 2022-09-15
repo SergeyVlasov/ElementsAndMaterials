@@ -24,7 +24,6 @@ where g.name is null
 --where ge.marking like '%раскладка%'
 --and g.idgoodgroup = 733
 
-
 --and ge.typ = 0   -- стекло
 --and ge.typ = 1   -- рамка
 --and ge.typ = 2   -- шпроссы

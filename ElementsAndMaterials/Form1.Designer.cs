@@ -41,7 +41,6 @@ namespace ElementsAndMaterials
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,7 +50,7 @@ namespace ElementsAndMaterials
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "показать стекло нарезка";
+            this.button1.Text = "показать стекло";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -127,7 +126,7 @@ namespace ElementsAndMaterials
             // 
             this.button8.Location = new System.Drawing.Point(245, 407);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(138, 23);
+            this.button8.Size = new System.Drawing.Size(172, 23);
             this.button8.TabIndex = 8;
             this.button8.Text = "внести рамку";
             this.button8.UseVisualStyleBackColor = true;
@@ -137,7 +136,7 @@ namespace ElementsAndMaterials
             // 
             this.button9.Location = new System.Drawing.Point(245, 436);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(138, 23);
+            this.button9.Size = new System.Drawing.Size(172, 23);
             this.button9.TabIndex = 9;
             this.button9.Text = "внести шпроссы";
             this.button9.UseVisualStyleBackColor = true;
@@ -147,7 +146,7 @@ namespace ElementsAndMaterials
             // 
             this.button10.Location = new System.Drawing.Point(245, 465);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(138, 23);
+            this.button10.Size = new System.Drawing.Size(172, 23);
             this.button10.TabIndex = 10;
             this.button10.Text = "внести пенки";
             this.button10.UseVisualStyleBackColor = true;
@@ -157,21 +156,11 @@ namespace ElementsAndMaterials
             // 
             this.button11.Location = new System.Drawing.Point(245, 494);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(138, 23);
+            this.button11.Size = new System.Drawing.Size(172, 23);
             this.button11.TabIndex = 11;
             this.button11.Text = "внести ленты";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(23, 365);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(169, 23);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "показать стекло СП";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -188,7 +177,6 @@ namespace ElementsAndMaterials
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 574);
-            this.Controls.Add(this.button12);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -223,7 +211,6 @@ namespace ElementsAndMaterials
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
     }
 }

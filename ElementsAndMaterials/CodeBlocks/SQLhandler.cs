@@ -17,7 +17,7 @@ namespace ElementsAndMaterials.CodeBlocks
             string result;
             if (com.ExecuteScalar() != null)
             {
-                textBox.Text += $"Материал: {material}, недостающие элементы: {Environment.NewLine}";
+                textBox.Text += $"Материал: {material}, недостающие элементы: {Environment.NewLine} {Environment.NewLine}";
                 var reader = com.ExecuteReader();
                 while (reader.Read())
                 {
