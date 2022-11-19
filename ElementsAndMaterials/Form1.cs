@@ -30,7 +30,7 @@ namespace ElementsAndMaterials
         private void button3_Click(object sender, EventArgs e) => makeRequestToShowAll("2", "шпроссы");
         private void button4_Click(object sender, EventArgs e) => makeRequestToShowAll("3", "пленки");
         private void button5_Click(object sender, EventArgs e) => makeRequestToShowAll("4", "ленты");
-        private void button12_Click(object sender, EventArgs e) => makeRequestToShowOne(textBox2.Text);
+        private void button12_Click(object sender, EventArgs e) => makeRequestToShowOne(textBox2.Text.Replace("\r\n", string.Empty));
 
         private void button7_Click(object sender, EventArgs e) => makeRequestToInsertAll("0", "стекло нарезка", "732", "SN_");
         private void button13_Click(object sender, EventArgs e) => makeRequestToInsertAll("0", "стекло СП", "709", "S_");
@@ -38,7 +38,7 @@ namespace ElementsAndMaterials
         private void button9_Click(object sender, EventArgs e) => makeRequestToInsertAll("2", "шпроссы", "714", "SHP_S_");
         private void button10_Click(object sender, EventArgs e) => makeRequestToInsertAll("3", "пленки", "719", "П "); // или "PL_" 715???
         private void button11_Click(object sender, EventArgs e) => makeRequestToInsertAll("4", "ленты", "759", "KF_");
-        private void button14_Click(object sender, EventArgs e) => makeRequestToInsertOne( textBox2.Text);
+        private void button14_Click(object sender, EventArgs e) => makeRequestToInsertOne( textBox2.Text.Replace("\r\n", string.Empty));
 
         private void makeRequestToShowAll(string type, string material)=>
             SQLhandler.makeRequestShowAllElements(com, con, type, material, textBox1);

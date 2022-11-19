@@ -12,9 +12,9 @@ namespace ElementsAndMaterials.CodeBlocks
         public static void makeRequestShowOneElement(SqlCommand com, SqlConnection con, string typeElement, string material, TextBox textBox, string nameElement)
         {
             makeRequestShow(com, con, typeElement, material, textBox, "select_1_element_witch_no_in_materials", nameElement);
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\select_1_element_witch_no_in_materials.sql")), typeElement, nameElement);
-            com.CommandText = ComText;
-            textBox.Text = ComText;
+            //string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\select_1_element_witch_no_in_materials.sql")), typeElement, nameElement);
+            //com.CommandText = ComText;
+            //textBox.Text = ComText;
         }
         public static void makeRequestShowAllElements(SqlCommand com, SqlConnection con, string typeElement, string material, TextBox textBox)
         {
@@ -22,7 +22,7 @@ namespace ElementsAndMaterials.CodeBlocks
         }
         public static void makeRequesInsertOneElement(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string nameElement)
         {
-            //makeRequesInsert(com, con, typeElement, material, goodGroup, prefix, textBox, "insert_1_element_in_materials.sql", elementName);
+            //makeRequesInsert(com, con, typeElement, material, goodGroup, prefix, textBox, "insert_1_element_in_materials.sql", nameElement);
             string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_1_element_in_materials.sql")), typeElement, material, goodGroup, prefix, nameElement);
             com.CommandText = ComText;
             textBox.Text = ComText;
@@ -60,7 +60,7 @@ namespace ElementsAndMaterials.CodeBlocks
 
         private static void makeRequesInsert(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string sqlFile, string nameElement)
         {
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, material, goodGroup, prefix, nameElement);
+            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, goodGroup, prefix, , nameElement);
             com.CommandText = ComText;
             con.Open();
             string result;
