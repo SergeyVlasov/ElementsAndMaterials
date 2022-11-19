@@ -27,10 +27,7 @@ namespace ElementsAndMaterials.CodeBlocks
             com.CommandText = ComText;
             textBox.Text = ComText;
         }
-        public static void makeRequesInsertAllElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string nameElement)
-        {
-            makeRequesInsert(com, con, typeElement, material, goodGroup, prefix, textBox, "insert_all_elements_in_materials.sql", nameElement);
-        }
+
 
         private static void makeRequestShow(SqlCommand com, SqlConnection con, string typeElement, string material, TextBox textBox, string sqlFile, string nameElement)
         {
@@ -58,9 +55,9 @@ namespace ElementsAndMaterials.CodeBlocks
             con.Close();
         }
 
-        private static void makeRequesInsert(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string sqlFile, string nameElement)
+        public static void makeRequesInsertAllElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox)
         {
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, goodGroup, prefix, , nameElement);
+            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\select_all_elements_witch_no_in_materials.sql")), typeElement);
             com.CommandText = ComText;
             con.Open();
             string result;
@@ -84,8 +81,9 @@ namespace ElementsAndMaterials.CodeBlocks
             foreach (string id in idList)
             {
                 con.Open();
-                com.CommandText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_element_in_materials.sql")), typeElement, goodGroup, prefix, id);
+                com.CommandText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_all_elements_in_materials.sql")), typeElement, goodGroup, prefix, id);
                 string xxx = com.CommandText;
+                textBox.Text += xxx;
                 com.ExecuteScalar();
                 con.Close();
             };

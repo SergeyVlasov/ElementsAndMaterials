@@ -44,9 +44,8 @@ namespace ElementsAndMaterials
             SQLhandler.makeRequestShowAllElements(com, con, type, material, textBox1);
         private void makeRequestToShowOne(string nameElement) =>
             SQLhandler.makeRequestShowOneElement(com, con, "", "", textBox1, nameElement);
-
         private void makeRequestToInsertAll(string type, string material, string goodGroup, string prefix ) =>
-            SQLhandler.makeRequesInsertAllElements(com, con, type, material, goodGroup, prefix,  textBox1, "");
+            SQLhandler.makeRequesInsertAllElements(com, con, type, material, goodGroup, prefix,  textBox1);
         private void makeRequestToInsertOne(string material)
         {
             switch (comboBox1.SelectedIndex)
