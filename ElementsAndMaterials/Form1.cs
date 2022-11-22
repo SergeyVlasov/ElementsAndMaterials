@@ -22,7 +22,7 @@ namespace ElementsAndMaterials
             com.CommandTimeout = 9000;
             InitializeComponent();
             textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Text += $"Используется подключение {ConfigHandler.GetConnString()} {Environment.NewLine}";
+            label1.Text = $"Используется подключение {ConfigHandler.GetConnString()} {Environment.NewLine}";
         }
         private void button6_Click(object sender, EventArgs e) => textBox1.Clear();
         private void button1_Click(object sender, EventArgs e) => makeRequestToShowAll("0", "стекло");
@@ -40,10 +40,12 @@ namespace ElementsAndMaterials
         private void button11_Click(object sender, EventArgs e) => makeRequestToInsertAll("4", "ленты", "759", "KF_");
         private void button14_Click(object sender, EventArgs e) => makeRequestToInsertOne( textBox2.Text.Replace("\r\n", string.Empty));
 
-        private void makeRequestToShowAll(string type, string material)=>
-            SQLhandler.makeRequestShowAllElements(com, con, type, material, textBox1);
+        private void makeRequestToShowAll(string type, string material) =>
+            //SQLhandler.makeRequestShowAllElements(com, con, type, material, textBox1); select_all_elements_witch_no_in_materials.sql
+            SQLhandler.makeRequestShowElements(com, con, type, material, textBox1, "select_all_elements_witch_no_in_materials.sql", "");
         private void makeRequestToShowOne(string nameElement) =>
-            SQLhandler.makeRequestShowOneElement(com, con, "", "", textBox1, nameElement);
+            //SQLhandler.makeRequestShowOneElement(com, con, "", "", textBox1, nameElement);
+            SQLhandler.makeRequestShowElements(com, con, "", "", textBox1, "select_1_element_witch_no_in_materials.sql", nameElement);
         private void makeRequestToInsertAll(string type, string material, string goodGroup, string prefix ) =>
             SQLhandler.makeRequesInsertAllElements(com, con, type, material, goodGroup, prefix,  textBox1);
         private void makeRequestToInsertOne(string material)
@@ -73,7 +75,5 @@ namespace ElementsAndMaterials
                 break;
             }            
         }
-
-
     }
 }

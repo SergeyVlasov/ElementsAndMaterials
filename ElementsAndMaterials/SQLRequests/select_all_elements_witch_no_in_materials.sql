@@ -31,5 +31,6 @@ where g.name is null
 --and ge.typ = 4   -- ленты
 
 and ge.typ = {0}
+-- {1}
 
 select marking_glasselement, name_glasselement, id_glasselement from @TempTable

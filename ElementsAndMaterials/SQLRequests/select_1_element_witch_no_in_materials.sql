@@ -6,4 +6,5 @@ from good g
 right join glasselement ge 
 on g.name = ge.name 
 where g.name is null
-and ge.name = '{0}'
+and ge.name = '{1}'
+--{0}
