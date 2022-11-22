@@ -41,10 +41,8 @@ namespace ElementsAndMaterials
         private void button14_Click(object sender, EventArgs e) => makeRequestToInsertOne( textBox2.Text.Replace("\r\n", string.Empty));
 
         private void makeRequestToShowAll(string type, string material) =>
-            //SQLhandler.makeRequestShowAllElements(com, con, type, material, textBox1); select_all_elements_witch_no_in_materials.sql
             SQLhandler.makeRequestShowElements(com, con, type, material, textBox1, "select_all_elements_witch_no_in_materials.sql", "");
         private void makeRequestToShowOne(string nameElement) =>
-            //SQLhandler.makeRequestShowOneElement(com, con, "", "", textBox1, nameElement);
             SQLhandler.makeRequestShowElements(com, con, "", "", textBox1, "select_1_element_witch_no_in_materials.sql", nameElement);
         private void makeRequestToInsertAll(string type, string material, string goodGroup, string prefix ) =>
             SQLhandler.makeRequesInsertAllElements(com, con, type, material, goodGroup, prefix,  textBox1);

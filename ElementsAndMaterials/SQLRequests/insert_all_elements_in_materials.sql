@@ -45,3 +45,6 @@ select @id, {1}, name_glasselement, marking_glasselement from @TempTable tt
 where tt.id_glasselement = {3}
 
 -- select сделать 
+
+DECLARE @NameMaterial VARCHAR(99)
+SET @NameMaterial='{4}'
