@@ -35,9 +35,10 @@ namespace ElementsAndMaterials.CodeBlocks
             con.Close();
         }
 
-        public static void makeRequesInsertAllElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox)
+        public static void makeRequesInsertElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string sqlFile, string nameElement)
         {
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\select_all_elements_witch_no_in_materials.sql")), typeElement);
+            //textBox.Text = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
+            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
             com.CommandText = ComText;
             con.Open();
             string result;
@@ -63,42 +64,7 @@ namespace ElementsAndMaterials.CodeBlocks
                 con.Open();
                 com.CommandText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_all_elements_in_materials.sql")), typeElement, goodGroup, prefix, id);
                 string xxx = com.CommandText;
-                textBox.Text += xxx;
-                com.ExecuteScalar();
-                con.Close();
-            };
-            
-            textBox.Text += $"элементы занесены в материалы {Environment.NewLine}";
-        }
-
-        public static void makeRequesInsertOneElement(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string nameElement)
-        {
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\select_1_element_witch_no_in_materials.sql")), "", nameElement);
-            com.CommandText = ComText;
-            textBox.Text = ComText;
-            con.Open();
-            string result;
-            List<string> idList = new List<string>();
-            if (com.ExecuteScalar() != null)
-            {
-                var reader = com.ExecuteReader();
-                while (reader.Read())
-                {
-                    idList.Add(reader["id_glasselement"].ToString());
-                }
-            }
-            else
-            {
-                textBox.Text += $"нет элементов для вставки {Environment.NewLine}";
-                con.Close();
-                return;
-            }
-            con.Close();
-
-            foreach (string id in idList)
-            {
-                con.Open();
-                com.CommandText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_all_elements_in_materials.sql")), typeElement, goodGroup, prefix, id);
+                //textBox.Text += xxx;
                 com.ExecuteScalar();
                 con.Close();
             };
