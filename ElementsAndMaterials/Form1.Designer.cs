@@ -29,6 +29,7 @@ namespace ElementsAndMaterials
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,13 +46,16 @@ namespace ElementsAndMaterials
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 394);
+            this.button1.Location = new System.Drawing.Point(22, 432);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 23);
             this.button1.TabIndex = 0;
@@ -61,7 +65,7 @@ namespace ElementsAndMaterials
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 76);
+            this.textBox1.Location = new System.Drawing.Point(22, 114);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(588, 302);
@@ -69,7 +73,7 @@ namespace ElementsAndMaterials
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 455);
+            this.button2.Location = new System.Drawing.Point(22, 493);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 23);
             this.button2.TabIndex = 2;
@@ -79,7 +83,7 @@ namespace ElementsAndMaterials
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(23, 513);
+            this.button3.Location = new System.Drawing.Point(22, 551);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(169, 23);
             this.button3.TabIndex = 3;
@@ -89,7 +93,7 @@ namespace ElementsAndMaterials
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(23, 484);
+            this.button4.Location = new System.Drawing.Point(22, 522);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 23);
             this.button4.TabIndex = 4;
@@ -99,7 +103,7 @@ namespace ElementsAndMaterials
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(23, 542);
+            this.button5.Location = new System.Drawing.Point(22, 580);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(169, 23);
             this.button5.TabIndex = 5;
@@ -109,7 +113,7 @@ namespace ElementsAndMaterials
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(617, 355);
+            this.button6.Location = new System.Drawing.Point(616, 393);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 6;
@@ -119,7 +123,7 @@ namespace ElementsAndMaterials
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(245, 394);
+            this.button7.Location = new System.Drawing.Point(244, 432);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(172, 23);
             this.button7.TabIndex = 7;
@@ -129,7 +133,7 @@ namespace ElementsAndMaterials
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(245, 455);
+            this.button8.Location = new System.Drawing.Point(244, 493);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(172, 23);
             this.button8.TabIndex = 8;
@@ -139,7 +143,7 @@ namespace ElementsAndMaterials
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(245, 484);
+            this.button9.Location = new System.Drawing.Point(244, 522);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(172, 23);
             this.button9.TabIndex = 9;
@@ -149,7 +153,7 @@ namespace ElementsAndMaterials
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(245, 513);
+            this.button10.Location = new System.Drawing.Point(244, 551);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(172, 23);
             this.button10.TabIndex = 10;
@@ -159,7 +163,7 @@ namespace ElementsAndMaterials
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(245, 542);
+            this.button11.Location = new System.Drawing.Point(244, 580);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(172, 23);
             this.button11.TabIndex = 11;
@@ -169,7 +173,7 @@ namespace ElementsAndMaterials
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(245, 423);
+            this.button13.Location = new System.Drawing.Point(244, 461);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(172, 23);
             this.button13.TabIndex = 12;
@@ -179,7 +183,7 @@ namespace ElementsAndMaterials
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(23, 44);
+            this.textBox2.Location = new System.Drawing.Point(22, 34);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(221, 20);
             this.textBox2.TabIndex = 13;
@@ -187,23 +191,58 @@ namespace ElementsAndMaterials
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(250, 41);
+            this.button12.Location = new System.Drawing.Point(249, 32);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(120, 23);
+            this.button12.Size = new System.Drawing.Size(167, 23);
             this.button12.TabIndex = 14;
-            this.button12.Text = "найти элемент";
+            this.button12.Text = "найти элемент по имени";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(617, 39);
+            this.button14.Location = new System.Drawing.Point(663, 34);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(120, 23);
             this.button14.TabIndex = 15;
             this.button14.Text = "внести элемент";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "label1";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(22, 69);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(221, 20);
+            this.textBox3.TabIndex = 17;
+            this.textBox3.Text = "\r\n";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(249, 67);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(167, 23);
+            this.button15.TabIndex = 18;
+            this.button15.Text = "найти элемент по id";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(663, 69);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 23);
+            this.button16.TabIndex = 20;
+            this.button16.Text = "внести элемент";
+            this.button16.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -214,25 +253,19 @@ namespace ElementsAndMaterials
             "2 \"шпроссы\"            714   SHP_S_",
             "3 \"пленки\"                719   П",
             "4 \"ленты\"                  759   KF_"});
-            this.comboBox1.Location = new System.Drawing.Point(376, 41);
+            this.comboBox1.Location = new System.Drawing.Point(422, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 21);
             this.comboBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 574);
+            this.ClientSize = new System.Drawing.Size(800, 627);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button14);
@@ -251,6 +284,7 @@ namespace ElementsAndMaterials
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -276,8 +310,11 @@ namespace ElementsAndMaterials
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

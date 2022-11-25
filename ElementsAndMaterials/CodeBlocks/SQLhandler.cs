@@ -19,6 +19,7 @@ namespace ElementsAndMaterials.CodeBlocks
             {
                 textBox.Text += $"Материал: {material}, недостающие элементы: {Environment.NewLine} {Environment.NewLine}";
                 var reader = com.ExecuteReader();
+                textBox.Text += $"id             marking                 name {Environment.NewLine}{Environment.NewLine}";
                 while (reader.Read())
                 {
                     string marking = reader["marking_glasselement"].ToString();
