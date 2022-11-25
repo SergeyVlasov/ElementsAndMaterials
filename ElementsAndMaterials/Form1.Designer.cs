@@ -47,10 +47,8 @@ namespace ElementsAndMaterials
             this.button12 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -183,25 +181,25 @@ namespace ElementsAndMaterials
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(22, 34);
+            this.textBox2.Location = new System.Drawing.Point(91, 61);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 20);
+            this.textBox2.Size = new System.Drawing.Size(199, 20);
             this.textBox2.TabIndex = 13;
             this.textBox2.Text = "\r\n";
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(249, 32);
+            this.button12.Location = new System.Drawing.Point(296, 59);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(167, 23);
+            this.button12.Size = new System.Drawing.Size(92, 23);
             this.button12.TabIndex = 14;
-            this.button12.Text = "найти элемент по имени";
+            this.button12.Text = "найти ";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(663, 34);
+            this.button14.Location = new System.Drawing.Point(645, 58);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(120, 23);
             this.button14.TabIndex = 15;
@@ -218,32 +216,6 @@ namespace ElementsAndMaterials
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(22, 69);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 20);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.Text = "\r\n";
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(249, 67);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(167, 23);
-            this.button15.TabIndex = 18;
-            this.button15.Text = "найти элемент по id";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(663, 69);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(120, 23);
-            this.button16.TabIndex = 20;
-            this.button16.Text = "внести элемент";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.Items.AddRange(new object[] {
@@ -253,19 +225,27 @@ namespace ElementsAndMaterials
             "2 \"шпроссы\"            714   SHP_S_",
             "3 \"пленки\"                719   П",
             "4 \"ленты\"                  759   KF_"});
-            this.comboBox1.Location = new System.Drawing.Point(422, 52);
+            this.comboBox1.Location = new System.Drawing.Point(404, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 21);
             this.comboBox1.TabIndex = 0;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Items.AddRange(new object[] {
+            "NAME",
+            "ID"});
+            this.comboBox2.Location = new System.Drawing.Point(25, 60);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(60, 21);
+            this.comboBox2.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 627);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button14);
@@ -311,10 +291,8 @@ namespace ElementsAndMaterials
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

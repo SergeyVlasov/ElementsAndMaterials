@@ -9,10 +9,11 @@ namespace ElementsAndMaterials.CodeBlocks
 {
     class SQLhandler
     {
-        public static void makeRequestShowElements(SqlCommand com, SqlConnection con, string typeElement, string material, TextBox textBox, string sqlFile, string nameElement)
+        public static void makeRequestShowElements(SqlCommand com, SqlConnection con, string typeElement, string material, TextBox textBox, string sqlFile, string identifiatorElement)
         {
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
+            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, identifiatorElement);
             com.CommandText = ComText;
+            //textBox.Text = ComText;
             con.Open();
             string result;
             if (com.ExecuteScalar() != null)
@@ -36,11 +37,12 @@ namespace ElementsAndMaterials.CodeBlocks
             con.Close();
         }
 
-        public static void makeRequesInsertElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string sqlFile, string nameElement)
+        public static void makeRequesInsertElements(SqlCommand com, SqlConnection con, string typeElement, string material, string goodGroup, string prefix, TextBox textBox, string sqlFile, string identificatorElement)
         {
             //textBox.Text = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
+            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, identificatorElement);
             com.CommandText = ComText;
+            textBox.Text = ComText;
             con.Open();
             string result;
             List<string> idList = new List<string>();

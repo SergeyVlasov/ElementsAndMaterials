@@ -119,6 +119,7 @@
   <ItemGroup>
     <Content Include="SQLRequests\insert_1_element_in_materials_by_name.sql" />
     <Content Include="SQLRequests\insert_all_elements_in_materials.sql" />
+    <Content Include="SQLRequests\select_1_element_witch_no_in_materials_by_ID.sql" />
     <Content Include="SQLRequests\select_1_element_witch_no_in_materials_by_name.sql" />
     <Content Include="SQLRequests\select_all_elements_witch_no_in_materials.sql" />
   </ItemGroup>
