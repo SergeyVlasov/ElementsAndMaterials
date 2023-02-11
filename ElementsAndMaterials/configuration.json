@@ -1,4 +1,3 @@
 {
-  "SQLconnection_": "uid = wd; pwd = izolux3498; MultipleActiveResultSets = True; database = wd; server = x004; Connection Timeout = 9000;",
-  "SQLconnection": "uid = sa; pwd = izolux3498; MultipleActiveResultSets = True; database = wd_temp2; server = c776; Connection Timeout = 9000;"
+  "SQLconnection": "uid = user; pwd = pass; MultipleActiveResultSets = True; database = db; server = server; Connection Timeout = 9000;"
 }
