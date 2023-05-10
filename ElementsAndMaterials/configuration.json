@@ -1,3 +1,3 @@
 {
-  "SQLconnection": "uid = user; pwd = pass; MultipleActiveResultSets = True; database = db; server = server; Connection Timeout = 9000;"
+  "SQLconnection": "uid = __; pwd = ____; MultipleActiveResultSets = true; database = ____; server = ____; Connection Timeout = 9000;"
 }

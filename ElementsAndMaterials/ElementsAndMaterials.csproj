@@ -117,11 +117,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQLRequests\insert_1_element_in_materials_by_name.sql" />
     <Content Include="SQLRequests\insert_all_elements_in_materials.sql" />
+    <Content Include="SQLRequests\insert_all_elements_in_materials_new_handle_materials_remove_double_insert_in_goods.sql" />
+    <Content Include="SQLRequests\select_1_element_from_goods_by_ID.sql" />
+    <Content Include="SQLRequests\select_1_element_from_goods_by_name.sql" />
     <Content Include="SQLRequests\select_1_element_witch_no_in_materials_by_ID.sql" />
     <Content Include="SQLRequests\select_1_element_witch_no_in_materials_by_name.sql" />
     <Content Include="SQLRequests\select_all_elements_witch_no_in_materials.sql" />
+    <Content Include="SQLRequests\select_all_elements_witch_no_in_materials_with_new_names_universal.sql" />
+    <Content Include="SQLRequests\select_good_marking_prefix_from_materials.sql" />
+    <Content Include="SQLRequests\select_good_name_postfix_from_materials.sql" />
+    <Content Include="SQLRequests\select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />
