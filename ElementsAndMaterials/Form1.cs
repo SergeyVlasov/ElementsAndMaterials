@@ -60,15 +60,9 @@ namespace ElementsAndMaterials
         private void button5_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(4, "ленты");
 
 
-        //private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingZakalka,  " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
-        //private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingPolirovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
-        //private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingShlifovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
-        private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingZakalka, " ", 0, postfixNameZakalka);
+          private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingZakalka, " ", 0, postfixNameZakalka);
         private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingPolirovka, " ", 0, postfixNamePolirovka);
         private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingShlifovka, " ", 0, postfixNameShlifovka);
-        //private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingZakalka, " ", 0, " закалка");
-        //private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingPolirovka, " ", 0, " полировка");
-        //private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingShlifovka, " ", 0, " шлифовка");
         private void button12_Click(object sender, EventArgs e) => makeRequestToShowOneElementFromMaterials((textBox2.Text.Replace("\r\n", string.Empty)).Trim());
         private void button16_Click(object sender, EventArgs e) => makeRequestToShowOneElementFromGoods((textBox2.Text.Replace("\r\n", string.Empty)).Trim());
 
@@ -85,9 +79,7 @@ namespace ElementsAndMaterials
      
 
 
-        //private void makeRequestToShowAll(string type, string material) =>
-        //    SQLhandler.makeRequestShowElementsаFromElements(com, con, type, material, textBox1, "select_all_elements_witch_no_in_materials.sql", "");
-        private void makeRequestToShowAll_EF(int type, string material) =>
+       private void makeRequestToShowAll_EF(int type, string material) =>
             SQLhandler_EF.makeRequestShowElementsFromElements_EF( material, textBox1, type);
 
 
@@ -98,9 +90,7 @@ namespace ElementsAndMaterials
         private void makeRequestToShowOneElementFromGoods(string nameElement) => selectSearchType(textBox2.Text, "search in goods", "O_", nameElement);
         private void makeRequestToInsertAll(string type, string material, string goodGroup, string prefix ) =>
             SQLhandler_EF.makeRequesInsertElements_EF(com, con, type, material, goodGroup, prefix,  textBox1, "select_all_elements_witch_no_in_materials.sql", "");
-        //private void makeRequestToInsertAll_NewGoods(string type, string material, string goodGroup, string prefix, string postfixMarking, string postfixName) =>
-        //    SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com, con, type, material, goodGroup, prefix, textBox1, "select_all_elements_witch_no_in_materials_new_goods_with_new_names.sql", "", postfixMarking, postfixName);
-        private void makeRequestToInsertAll_NewGoods(string type, string material, string goodGroup, string prefixMarking, string postfixMarking, string postfixName, string typeElement)
+                private void makeRequestToInsertAll_NewGoods(string type, string material, string goodGroup, string prefixMarking, string postfixMarking, string postfixName, string typeElement)
         {
             string addPartOfName = "";
             switch (typeElement)
@@ -118,10 +108,9 @@ namespace ElementsAndMaterials
                     addPartOfName = "";
                     break;
             }
-            SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+            SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods_EF(com,
                                                                                       con,
                                                                                       type,
-                                                                                      "select_all_elements_witch_no_in_materials_with_new_names_universal.sql",
                                                                                       goodGroup,
                                                                                       prefixMarking,
                                                                                       postfixMarking,
@@ -173,10 +162,9 @@ namespace ElementsAndMaterials
                     SQLhandler_EF.makeRequesInsertElements_EF(com, con, "4", "ленты", "759", "KF_", textBox1, sqlFile, textBox);
                     break;
                 case 6:
-                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com, 
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods_EF(com, 
                                                                                               con, 
                                                                                               "0",
-                                                                                              "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
                                                                                               "765",  //765 - для нового цеха стекла 
                                                                                               "O_",
                                                                                               postfixMarkingZakalka,
@@ -186,10 +174,9 @@ namespace ElementsAndMaterials
                                                                                               );
                     break;
                 case 7:
-                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods_EF(com,
                                                                                               con,
                                                                                               "0",
-                                                                                              "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
                                                                                               "765",
                                                                                               "O_",                                                                                                                                                                                              
                                                                                               postfixMarkingPolirovka,
@@ -199,10 +186,9 @@ namespace ElementsAndMaterials
                                                                                                );
                     break;
                 case 8:
-                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods_EF(com,
                                                                                                con,
                                                                                                "0",
-                                                                                               "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
                                                                                                "765",
                                                                                                "O_",                                                                                                                                                                                              
                                                                                                postfixMarkingShlifovka,

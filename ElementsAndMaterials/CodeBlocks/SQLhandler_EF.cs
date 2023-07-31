@@ -320,65 +320,7 @@ namespace ElementsAndMaterials.CodeBlocks
 
 
         //----------------------------------------
-        public static void makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(SqlCommand com, 
-                                                                                          SqlConnection con,
-                                                                                          string typeElement,
-                                                                                          string sqlFile,
-                                                                                          string goodGroup,
-                                                                                          string prefixMarking,
-                                                                                          string postfixMarking,
-                                                                                          string postfixName,
-                                                                                          TextBox textBox,
-                                                                                          string identificatorElement)
-        {
-            //textBox.Text = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), typeElement, nameElement);
-            string ComText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\{sqlFile}")), prefixMarking, postfixMarking, identificatorElement, typeElement);
-            com.CommandText = ComText;
-            textBox.Text += ComText;
-            con.Open();
-            Dictionary<string, string> elements = new Dictionary<string, string>();
-            if (com.ExecuteScalar() != null)
-            {
-                var reader = com.ExecuteReader();
-                while (reader.Read())
-                {
-                    elements.Add(reader["id_glasselement"].ToString(), reader["name_glasselement"].ToString());
-                    textBox.Text += "\n";
-                    textBox.Text += reader["id_glasselement"].ToString() + "         " + reader["name_glasselement"].ToString();
-                    textBox.Text += "-----------------------------------------";
-                    textBox.Text += "\n";
-                }
-            }
-            else
-            {
-                textBox.Text += $"нет элементов для вставки {Environment.NewLine}";
-                con.Close();
-                return;
-            }
-            con.Close();
-
-            string CommandTextAll = "";
-
-            con.Open();
-            foreach (var element in elements)
-            {
-                com.CommandText = string.Format(File.ReadAllText(FilePathFinder.GetPathToFile($"\\SQLRequests\\insert_all_elements_in_materials_new_handle_materials_remove_double_insert_in_goods.sql")), typeElement, goodGroup, prefixMarking, element.Key, postfixMarking, postfixName, element.Value, postfixName);
-                CommandTextAll = com.CommandText;
-                //CommandTextAll += "\n\n";
-                textBox.Text += CommandTextAll;
-                com.ExecuteScalar();
-            };
-
-            //textBox.Text += CommandTextAll;
-            //con.Open();
-            //com.CommandText = CommandTextAll;
-            //textBox.Text += CommandTextAll;
-            //com.ExecuteScalar();
-            con.Close();
-
-            textBox.Text += $"элементы занесены в материалы {Environment.NewLine}";
-        }
-
+    
 
         public static void makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods_EF(SqlCommand com,
                                                                                           SqlConnection con,
