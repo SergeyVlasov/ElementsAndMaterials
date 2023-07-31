@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Utils;
 using ElementsAndMaterials.CodeBlocks;
 using System.Linq;
+using ElementsAndMaterials.Utils;
 
 namespace ElementsAndMaterials
 {
@@ -29,30 +30,45 @@ namespace ElementsAndMaterials
             InitializeComponent();
             textBox1.ScrollBars = ScrollBars.Vertical;
             label1.Text = $"Используется подключение {ConfigHandler.GetConnString()} {Environment.NewLine}";
-            //postfixMarkingZakalka = SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Закалка", "select_good_marking_prefix_from_materials.sql", textBox1, "marking");
-            //postfixMarkingPolirovka = SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Полировка", "select_good_marking_prefix_from_materials.sql", textBox1, "marking");
-            //postfixMarkingShlifovka = SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Шлифовка", "select_good_marking_prefix_from_materials.sql", textBox1, "marking");
-            //postfixNameZakalka = " " + SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Закалка", "select_good_name_postfix_from_materials.sql", textBox1, "name");
-            //postfixNamePolirovka = " " + SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Полировка", "select_good_name_postfix_from_materials.sql", textBox1, "name");
-            //postfixNameShlifovka = " " + SQLhandler.makeRequestoShowNamePartToAddAsync(com, con, "Шлифовка", "select_good_name_postfix_from_materials.sql", textBox1, "name");
+            label1.Text += $"Используется подключение для EF {ConfigHandler.GetConnStringEF()} {Environment.NewLine}";
+            
+            //postfixMarkingZakalka = "зак";
+            //postfixMarkingPolirovka = "П";
+            //postfixMarkingShlifovka = "Ш";
+            //postfixNameZakalka = "закалка";
+            //postfixNamePolirovka = "полировка";
+            //postfixNameShlifovka = "шлифовка";
 
-            postfixMarkingZakalka = "зак";
-            postfixMarkingPolirovka = "П";
-            postfixMarkingShlifovka = "Ш";
-            postfixNameZakalka = "закалка";
-            postfixNamePolirovka = "полировка";
-            postfixNameShlifovka = "шлифовка";
+
+            textBox1.Text += "!!!!!!!!!!!!!!!!!!!!!!!";
+
+            postfixMarkingZakalka  = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Закалка", "marking");
+            postfixMarkingPolirovka  = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Полировка", "marking");
+            postfixMarkingShlifovka  = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Шлифовка", "marking");
+            postfixNameZakalka  = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Закалка", "name");
+            postfixNamePolirovka = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Полировка", "name");
+            postfixNameShlifovka  = TextDataHandler.makeRequestoShowNamePartToAddAsync_EF("Шлифовка", "name");
+            ;
+
         }
         private void button6_Click(object sender, EventArgs e) => textBox1.Clear();
-        private void button1_Click(object sender, EventArgs e) => makeRequestToShowAll("0", "стекло");
-        private void button2_Click(object sender, EventArgs e) => makeRequestToShowAll("1", "рамки");
-        private void button3_Click(object sender, EventArgs e) => makeRequestToShowAll("2", "шпроссы");
-        private void button4_Click(object sender, EventArgs e) => makeRequestToShowAll("3", "пленки");
-        private void button5_Click(object sender, EventArgs e) => makeRequestToShowAll("4", "ленты");
-        private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingZakalka,  " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
-        private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingPolirovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
-        private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingShlifovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
 
+        private void button1_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(0, "стекло");
+        private void button2_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(1, "рамки");
+        private void button3_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(2, "шпроссы");
+        private void button4_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(3, "пленки");
+        private void button5_Click(object sender, EventArgs e) => makeRequestToShowAll_EF(4, "ленты");
+
+
+        //private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingZakalka,  " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
+        //private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingPolirovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
+        //private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "select_all_elements_witch_no_in_materials_with_new_names_universal.sql", "O_", postfixMarkingShlifovka, " ", "0"); // имя не нужно, ищем все select_all_elements_witch_no_in_materials_with_new_names_universal.sql
+        private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingZakalka, " ", 0, postfixNameZakalka);
+        private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingPolirovka, " ", 0, postfixNamePolirovka);
+        private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingShlifovka, " ", 0, postfixNameShlifovka);
+        //private void button19_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingZakalka, " ", 0, " закалка");
+        //private void button20_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingPolirovka, " ", 0, " полировка");
+        //private void button21_Click(object sender, EventArgs e) => makeRequestToShowAll_newName("стекло", "O_", postfixMarkingShlifovka, " ", 0, " шлифовка");
         private void button12_Click(object sender, EventArgs e) => makeRequestToShowOneElementFromMaterials((textBox2.Text.Replace("\r\n", string.Empty)).Trim());
         private void button16_Click(object sender, EventArgs e) => makeRequestToShowOneElementFromGoods((textBox2.Text.Replace("\r\n", string.Empty)).Trim());
 
@@ -69,15 +85,19 @@ namespace ElementsAndMaterials
      
 
 
-        private void makeRequestToShowAll(string type, string material) =>
-            SQLhandler.makeRequestShowElementsаFromElements(com, con, type, material, textBox1, "select_all_elements_witch_no_in_materials.sql", "");
-        private void makeRequestToShowAll_newName(string material, string sqlFile, string prefixMarking, string postfixMarking, string identificatorElement, string typeOfElement) =>
-            SQLhandler.makeRequestShowElementsFromGoods(com, con, material, textBox1, sqlFile, prefixMarking, postfixMarking, identificatorElement, typeOfElement);
+        //private void makeRequestToShowAll(string type, string material) =>
+        //    SQLhandler.makeRequestShowElementsаFromElements(com, con, type, material, textBox1, "select_all_elements_witch_no_in_materials.sql", "");
+        private void makeRequestToShowAll_EF(int type, string material) =>
+            SQLhandler_EF.makeRequestShowElementsFromElements_EF( material, textBox1, type);
+
+
+        private void makeRequestToShowAll_newName(string material, string prefixMarking, string postfixMarking, string identificatorElement, int typeOfElement, string postfixName) =>
+            SQLhandler_EF.makeRequestShowElementsFromGoods_EF( material, textBox1, prefixMarking, postfixMarking, identificatorElement, typeOfElement, postfixName);
 
         private void makeRequestToShowOneElementFromMaterials(string nameElement) => selectSearchType(textBox2.Text, "search in materials", "O_", nameElement);
         private void makeRequestToShowOneElementFromGoods(string nameElement) => selectSearchType(textBox2.Text, "search in goods", "O_", nameElement);
         private void makeRequestToInsertAll(string type, string material, string goodGroup, string prefix ) =>
-            SQLhandler.makeRequesInsertElements(com, con, type, material, goodGroup, prefix,  textBox1, "select_all_elements_witch_no_in_materials.sql", "");
+            SQLhandler_EF.makeRequesInsertElements_EF(com, con, type, material, goodGroup, prefix,  textBox1, "select_all_elements_witch_no_in_materials.sql", "");
         //private void makeRequestToInsertAll_NewGoods(string type, string material, string goodGroup, string prefix, string postfixMarking, string postfixName) =>
         //    SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com, con, type, material, goodGroup, prefix, textBox1, "select_all_elements_witch_no_in_materials_new_goods_with_new_names.sql", "", postfixMarking, postfixName);
         private void makeRequestToInsertAll_NewGoods(string type, string material, string goodGroup, string prefixMarking, string postfixMarking, string postfixName, string typeElement)
@@ -98,7 +118,7 @@ namespace ElementsAndMaterials
                     addPartOfName = "";
                     break;
             }
-            SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+            SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
                                                                                       con,
                                                                                       type,
                                                                                       "select_all_elements_witch_no_in_materials_with_new_names_universal.sql",
@@ -135,25 +155,25 @@ namespace ElementsAndMaterials
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    SQLhandler.makeRequesInsertElements(com, con, "0", "стекло нарезка", "732", "SN_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "0", "стекло нарезка", "732", "SN_", textBox1, sqlFile, textBox);
                     break;
                 case 1:
-                    SQLhandler.makeRequesInsertElements(com, con, "0", "стекло СП", "709", "S_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "0", "стекло СП", "709", "S_", textBox1, sqlFile, textBox);
                     break;
                 case 2:
-                    SQLhandler.makeRequesInsertElements(com, con, "1", "рамки", "733", "R_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "1", "рамки", "733", "R_", textBox1, sqlFile, textBox);
                     break;
                 case 3:
-                    SQLhandler.makeRequesInsertElements(com, con, "2", "шпроссы", "714", "SHP_S_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "2", "шпроссы", "714", "SHP_S_", textBox1, sqlFile, textBox);
                     break;
                 case 4:
-                    SQLhandler.makeRequesInsertElements(com, con, "3", "пленки", "719", "П_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "3", "пленки", "719", "П_", textBox1, sqlFile, textBox);
                     break;
                 case 5:
-                    SQLhandler.makeRequesInsertElements(com, con, "4", "ленты", "759", "KF_", textBox1, sqlFile, textBox);
+                    SQLhandler_EF.makeRequesInsertElements_EF(com, con, "4", "ленты", "759", "KF_", textBox1, sqlFile, textBox);
                     break;
                 case 6:
-                    SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com, 
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com, 
                                                                                               con, 
                                                                                               "0",
                                                                                               "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
@@ -166,7 +186,7 @@ namespace ElementsAndMaterials
                                                                                               );
                     break;
                 case 7:
-                    SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
                                                                                               con,
                                                                                               "0",
                                                                                               "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
@@ -179,7 +199,7 @@ namespace ElementsAndMaterials
                                                                                                );
                     break;
                 case 8:
-                    SQLhandler.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
+                    SQLhandler_EF.makeRequesInsertElementsNew_NewGoods_removeDoubleInsertInGoods(com,
                                                                                                con,
                                                                                                "0",
                                                                                                "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql",
@@ -198,21 +218,17 @@ namespace ElementsAndMaterials
         }
         private void selectSearchType(string identificatorElement, string typeSearch, string prefixMarking, string postfixMarking)
         {
-            string sqlFileSerachByName = "";
-            string sqlFileSerachByID = "";
             switch (typeSearch)
             {
                 case "search in materials":
-                    sqlFileSerachByName = "select_1_element_witch_no_in_materials_by_name.sql";
-                    sqlFileSerachByID = "select_1_element_witch_no_in_materials_by_ID.sql";
                     switch (comboBox2.SelectedIndex)
                     {
                         case 0:
-                            SQLhandler.makeRequestShowElementsаFromElements(com, con, "", "", textBox1, sqlFileSerachByName, identificatorElement);
+                            SQLhandler_EF.makeRequestShowOneElementFromElementsByName_EF( "", textBox1, identificatorElement);
                             break;
                         case 1:
                             if (identificatorElement.All(char.IsDigit))
-                                SQLhandler.makeRequestShowElementsаFromElements(com, con, "", "", textBox1, sqlFileSerachByID, identificatorElement);
+                                SQLhandler_EF.makeRequestShowOneElementFromElementsByID_EF("", textBox1, int.Parse(identificatorElement));
                             else
                                 textBox1.Text = " НЕПРАВИЛЬНО ВЫБРАН ТИП ПОИСКА ";
                             break;
@@ -222,18 +238,14 @@ namespace ElementsAndMaterials
                     }
                     break;
                 case "search in goods":
-                    //sqlFileSerachByName = "select_1_element_from_goods_by_name.sql";
-                    //sqlFileSerachByID = "select_1_element_from_goods_by_ID.sql";
                     switch (comboBox2.SelectedIndex)
                     {
                         case 0:
-                            //SQLhandler.makeRequestShowElementsFromGoods(com, con,  "", textBox1, "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql", prefixMarking, postfixMarking, identificatorElement, "0");
-                            SQLhandler.makeRequestShowElementsFromGoods(com, con,  "", textBox1, "select_1_element_from_goods_by_name.sql", prefixMarking, postfixMarking, identificatorElement, "0");
+                            SQLhandler_EF.makeRequestShowOneElementFromGoods_EF("", textBox1, identificatorElement, "Name");
                             break;
                         case 1:
                             if (identificatorElement.All(char.IsDigit))
-                                //SQLhandler.makeRequestShowElementsFromGoods(com, con, "", textBox1, "select_ONE_elements_witch_no_in_materials_with_new_names_universal.sql", prefixMarking, postfixMarking, identificatorElement, "0");
-                            SQLhandler.makeRequestShowElementsFromGoods(com, con, "", textBox1, "select_1_element_from_goods_by_ID.sql", prefixMarking, postfixMarking, identificatorElement, "0");
+                                SQLhandler_EF.makeRequestShowOneElementFromGoods_EF("", textBox1, identificatorElement, "ID");
                             else
                                 textBox1.Text = " НЕПРАВИЛЬНО ВЫБРАН ТИП ПОИСКА ";
                             break;

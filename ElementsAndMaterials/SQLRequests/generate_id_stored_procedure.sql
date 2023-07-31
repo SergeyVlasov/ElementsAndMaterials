@@ -1,0 +1,1 @@
+﻿declare @id int EXEC gen_id_ex 'gen_good', 1, @id out select @id
